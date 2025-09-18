@@ -11,12 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      class="rounded-full"
-      rel="icon"
-      type="image/x-icon"
-      href="/Asset/LogoHsja-removebg-preview.png"
-    />
     <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
@@ -35,10 +29,10 @@
         letter-spacing: -0.5px;
       }
       .btn-primary {
-        @apply bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-sky-600 transition-colors duration-300;
+        @apply bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-sky-600 transition-all duration-300;
       }
       .btn-secondary {
-        @apply bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-900 transition-colors duration-300;
+        @apply bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-900 transition-all duration-300;
       }
       /* Custom scrollbar for a better look */
       ::-webkit-scrollbar {
@@ -54,33 +48,6 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
       }
-
-      .hover-text-hsja-blue:hover {
-        color: rgb(37, 66, 211);
-      }
-
-      #modal-title {
-        color: white;
-        background-color: rgb(37, 66, 211);
-        padding: 10px;
-        border-radius: 5px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-      /* #img-tiktok {
-        width: 30px;
-        height: 30px;
-      }
-      #img-tiktok:hover {
-        width: 31px;
-        height: 31px;
-        transition: all 0.3s ease-in-out;
-      } */
     </style>
   </head>
   <body class="text-gray-800">
@@ -422,9 +389,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white mt-24 max-h-full">
+    <footer class="bg-blue-800 text-white mt-12">
       <div class="container mx-auto p-6 text-center">
-        <p>&copy; 2025 HSJmArket. All Rights Reserved.</p>
+        <p>&copy; 2024 HSJmArket. All Rights Reserved.</p>
       </div>
     </footer>
 
@@ -656,18 +623,18 @@
           const product = products.find((p) => p.id === productId);
           if (product) {
             detailProdukContainer.innerHTML = `
-                        <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                 <div class="flex justify-center items-center">
                                     <img src="${product.image}" alt="${
               product.name
             }" class="rounded-lg max-w-full h-auto shadow-md">
                                 </div>
                                 <div>
-                                    <h1 class="text-3xl md:text-4xl font-bold text-blue-800">${
+                                    <h1 class="text-2xl md:text-3xl font-bold text-blue-800">${
                                       product.name
                                     }</h1>
-                                    <p class="text-2xl text-sky-600 font-bold my-4">${formatRupiah(
+                                    <p class="text-xl md:text-2xl text-sky-600 font-bold my-3">${formatRupiah(
                                       product.price
                                     )}</p>
                                     <div class="space-x-2 mb-4">
@@ -683,13 +650,13 @@
                                     }</p>
                                     
                                     <div class="flex flex-col gap-4 mb-2">
-                                        <div class="flex items-center gap-4">
-                                            <label for="customer-name" class="font-semibold w-16">Nama:</label>
+                                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                            <label for="customer-name" class="font-semibold w-full sm:w-16">Nama:</label>
                                             <input type="text" id="customer-name" placeholder="Nama Anda" class="flex-grow border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-sky-500">
                                         </div>
-                                        <div class="flex items-center gap-4">
-                                            <label for="quantity" class="font-semibold w-16">Jumlah:</label>
-                                            <input type="number" id="quantity" value="1" min="1" class="w-20 border rounded-lg p-2 text-center focus:outline-none focus:ring-2 focus:ring-sky-500">
+                                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                            <label for="quantity" class="font-semibold w-full sm:w-16">Jumlah:</label>
+                                            <input type="number" id="quantity" value="1" min="1" class="w-24 border rounded-lg p-2 text-center focus:outline-none focus:ring-2 focus:ring-sky-500">
                                         </div>
                                     </div>
                                     <p id="order-validation-msg" class="text-red-500 text-sm mt-2 h-5"></p>
